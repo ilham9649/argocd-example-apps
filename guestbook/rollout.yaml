@@ -31,10 +31,6 @@ spec:
           gatewayAPI:
             namespace: default
             httpRoute: guestbook-httproute
-            webhooks:
-            - serviceRef:
-                name: argo-rollouts-notification-controller
-                namespace: argo-rollouts
       analysis:
         templates:
         - templateName: success-rate
