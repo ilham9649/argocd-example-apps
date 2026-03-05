@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-cert
+  namespace: argocd
+spec:
+  secretName: argocd-tls
+  secretTemplate:
+    annotations:
+      cert.gardener.cloud/precedence: "gateway"
+  duration: 2160h
+  renewBefore: 720h
+  commonName: argocd.sulaksono.id
+  dnsNames:
+    - argocd.sulaksono.id
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  privateKey:
+    rotationPolicy: Always
