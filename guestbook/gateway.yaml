@@ -3,7 +3,7 @@ kind: Gateway
 metadata:
   name: guestbook-gateway
 spec:
-  gatewayClassName: gke-l7-regional-external-managed
+  gatewayClassName: gke-l7-global-external-managed
   listeners:
   - name: http
     port: 80
